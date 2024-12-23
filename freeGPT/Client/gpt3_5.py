@@ -26,7 +26,7 @@ class Completion:
         """
         try:
             resp = post(
-                "https://vtlchat-g1.vercel.app/api/openai/v1/chat/completions",
+                "https://gpt24-ecru.vercel.app/api/openai/v1/chat/completions",
                 json={
                     "messages": [{"role": "user", "content": prompt}],
                     "stream": False,
