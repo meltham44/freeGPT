@@ -9,10 +9,10 @@ textGenModels = {
 imageGenModels = {"prodia": prodia, "pollinations": pollinations}
 
 
-def create_completion(model, prompt):
+def create_completion(model, prompt, system_prompt=""):
     if model not in textGenModels:
         raise Exception("Model not found.")
-    return textGenModels[model].Completion().create(prompt)
+    return textGenModels[model].Completion().create(prompt, system_prompt)
 
 
 def create_generation(model, prompt):

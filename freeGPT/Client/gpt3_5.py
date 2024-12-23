@@ -11,7 +11,7 @@ class Completion:
     This class provides methods for generating completions based on prompts.
     """
 
-    def create(self, prompt):
+    def create(self, prompt, system_prompt):
         """
         Create a completion for the given prompt using an AI text generation API.
 
@@ -28,7 +28,7 @@ class Completion:
             resp = post(
                 "https://gpt24-ecru.vercel.app/api/openai/v1/chat/completions",
                 json={
-                    "messages": [{"role": "user", "content": prompt}],
+                    "messages": [{"role":"system","content": system_prompt},{"role": "user", "content": prompt}],
                     "stream": False,
                     "model": "gpt-3.5-turbo",
                     "temperature": 0.5,
