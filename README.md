@@ -17,7 +17,7 @@ Clone:
 
 Install:
 
-    pip install -e .
+    pip install .
 
 ## Sources:
 
